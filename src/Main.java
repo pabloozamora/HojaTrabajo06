@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -27,7 +28,7 @@ public class Main {
 	}
 	
 	public static void main(String[] args) {
-		Inventory inventory = new Inventory();
+		Controlador controlador = new Controlador();
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("\nBienvenido al inventario de la tienda en linea");
@@ -47,11 +48,15 @@ public class Main {
 			}
 		}
 		
+		ArrayList<String> categories = new ArrayList<String>();
+		ArrayList<String> products = new ArrayList<String>();
 		for (String row : content) {
-			String[] line = row.split("|");
+			String[] line = row.split("\\|");
 			String category = line[0].replaceAll("\\s+$", "");
 			String product = line[1];
-			System.out.println(category);
+			categories.add(category);
+			products.add(product);
 		}
+		
 	}
 }
