@@ -80,8 +80,7 @@ public class Controlador {
 	 */
 	public String showCategory(String product) {
 		String message = "";
-		String search_product = product + "1";
-		String category = (String) inventory.get(search_product);
+		String category = (String) inventory.get(product);
 		if (category == null) {
 			message = "\nEl producto ingresado no es valido";
 		}
